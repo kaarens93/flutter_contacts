@@ -486,7 +486,7 @@ public class ContactsServicePlugin implements MethodCallHandler, FlutterPlugin, 
             StructuredPostal.CONTENT_ITEM_TYPE, CommonDataKinds.Event.CONTENT_ITEM_TYPE, ContactsContract.RawContacts.ACCOUNT_TYPE));
     if (query != null) {
       selectionArgs = new ArrayList<>();
-      selectionArgs.add(query + "%");
+      selectionArgs.add("%" + query + "%");
       selection = ContactsContract.Contacts.DISPLAY_NAME_PRIMARY + " LIKE ?";
     }
     if (rawContactId != null) {
